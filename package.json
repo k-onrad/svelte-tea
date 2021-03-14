@@ -2,7 +2,7 @@
   "name": "typescript-starter",
   "version": "1.0.0",
   "description": "A basic typescript app starter for newbies in 2019.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "pnpm run compile && terser --compress --mangle -o dist/index.js -- dist/index.js",
     "compile": "rimraf ./dist && tsc --project tsconfig.prod.json --skipLibCheck",
