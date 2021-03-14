@@ -1,4 +1,6 @@
-### Svelte TEA 🍵
+### Svelte TEA
+
+![image](https://user-images.githubusercontent.com/11230632/111053875-5abf5d80-8446-11eb-81b5-e07058966674.png)
 
 A set of functions that provide TEA-style¹ state management using Svelte stores.
 
