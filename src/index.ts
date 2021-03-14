@@ -42,7 +42,7 @@ export const createModel = <Model, Message> (updater: UpdateFunction<Model, Mess
 }
 
 export const withMiddleware = <Model, Message> (...middlewares: Array<Middleware<Model, Message>>) => (updater: UpdateFunction<Model, Message>) => (initialModel: Model): ModelAPI<Model, Message> => {
-  const [model, oldDispatch] = createModel(updater)(initialModel)
+  const [model, oldDispatch] = createModel<Model, Message>(updater)(initialModel)
 
   if (!Array.isArray(middlewares) || middlewares.length === 0) return [model, oldDispatch]
 
