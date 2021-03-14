@@ -1,4 +1,4 @@
-### Svelte TEA
+### Svelte TEA 🍵
 
 A set of functions that provide TEA-style¹ state management using Svelte stores.
 
