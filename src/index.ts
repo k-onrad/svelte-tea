@@ -2,7 +2,7 @@ import { getContext, setContext } from 'svelte'
 import { writable, derived } from 'svelte/store'
 import type { Readable } from 'svelte/store'
 
-const MODEL = typeof Symbol !== 'undefined' ? Symbol('model') : '@model'
+const MODELKEY = typeof Symbol !== 'undefined' ? Symbol('@@@MODELKEY') : '@@@MODELKEY'
 
 export type Value<Model> = Model[keyof Model]
 
@@ -29,7 +29,7 @@ function reduce<T, S> (reducer: (a: T, cur: S) => T, init: T, iterable: S[]): T 
 }
 
 export const useModel = <Model, Message> (...path: string[]): ModelAPI<Model, Message> => {
-  const [model, dispatch]: ModelAPI<Model, Message> = getContext(MODEL)
+  const [model, dispatch]: ModelAPI<Model, Message> = getContext(MODELKEY)
 
   if (model == null) {
     throw new Error('Context not found. Please ensure you provide the model using "provideModel" function')
@@ -45,7 +45,7 @@ export const useModel = <Model, Message> (...path: string[]): ModelAPI<Model, Me
 }
 
 export const provideModel = <Model, Message> ([model, dispatch]: ModelAPI<Model, Message>): void => {
-  setContext(MODEL, [model, dispatch])
+  setContext(MODELKEY, [model, dispatch])
 }
 
 export const createModel = <Model, Message> (updater: UpdateFunction<Model, Message>) => (initialModel: Model): ModelAPI<Model, Message> => {
