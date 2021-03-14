@@ -1,21 +1,10 @@
-### Scripts
+### Svelte TEA
 
-#### `pnpm run start:dev`
+A set of functions that provide TEA-style¹ state management using Svelte stores.
 
-Starts the application in development using `nodemon` and `ts-node` to do hot reloading.
+#### Example
+[demo](https://svelte.dev/repl/fdffcf2e69324426bc7015101b080d53?version=3.35.0)
 
-#### `pnpm run start`
+---
 
-Starts the app in production by first building the project with `pnpm run build`, and then executing the compiled JavaScript at `dist/index.js`.
-
-#### `pnpm run build`
-
-Builds the app at `dist`, cleaning the folder first.
-
-#### `pnpm run test`
-
-Runs the `jest` tests once.
-
-#### `pnpm run test:dev`
-
-Run the `jest` tests in watch mode, waiting for file changes.
+¹: where TEA = The Elm Architecture
