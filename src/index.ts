@@ -77,7 +77,7 @@ export const useModel = <Model, Message> (...path: string[]): [Readable<ModelNod
     throw new Error('Context not found. Please ensure you provide the model using "provideModel" function')
   }
 
-  const modelNode = derived(
+  const node = derived(
     model,
     ($model: ModelNode<Model>): ModelNode<Model> => {
       const reducer = (acc: ModelNode<Model>, cur: string): ModelNode<Model> => {
@@ -88,5 +88,5 @@ export const useModel = <Model, Message> (...path: string[]): [Readable<ModelNod
     },
   )
 
-  return [modelNode, model.dispatch]
+  return [node, model.dispatch]
 }
