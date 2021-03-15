@@ -1,5 +1,5 @@
 describe('test', () => {
-  test('add', async () => {
+  test('add', () => {
     expect(1 + 1).toEqual(2)
   })
 })
